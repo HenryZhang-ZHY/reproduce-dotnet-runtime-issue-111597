@@ -50,6 +50,7 @@ Test-Path .\NetCoreConsoleApp\bin\Release\net8.0\win-x64\publish\Microsoft.Data.
 # Reason
 
 1. `Assembly.Load` is a `load-by-name` API, the AssemblyLoadContext only execute the [managed assembly default probing logic](https://learn.microsoft.com/en-us/dotnet/core/dependency-loading/default-probing#managed-assembly-default-probing) for it. Since the `Microsoft.Data.SqlClient.SNI` assembly is a native assembly, it is not listed in `TRUSTED_PLATFORM_ASSEMBLIES`, that's why we get the `System.IO.FileNotFoundException` exception.
+reference: https://learn.microsoft.com/en-us/dotnet/core/dependency-loading/loading-managed#algorithm
 
 2. To make it works like the .NET Framework application, we need to handle the AssemblyResolve event to probe the assembly by ourselves, like this:
 ```csharp
