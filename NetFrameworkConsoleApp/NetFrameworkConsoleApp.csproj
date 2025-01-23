@@ -9,13 +9,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Update="Microsoft.Data.SqlClient.SNI.dll">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\NormalClrAssembly\NormalClrAssembly.csproj" />
+        <ProjectReference Include="..\NormalClrAssembly\NormalClrAssembly.csproj"/>
     </ItemGroup>
     
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2"/>
+    </ItemGroup>
+
 </Project>

@@ -7,6 +7,6 @@ public static class Program
     public static void Main(string[] args)
     {
         Assembly.Load("NormalClrAssembly");
-        Assembly.Load("Microsoft.Data.SqlClient.SNI");
+        Assembly.Load("Microsoft.Data.SqlClient.SNI.x64");
     }
 }
